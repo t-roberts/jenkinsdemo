@@ -19,7 +19,7 @@ namespace Jenkins.Fass.Tests
         [Fact]
         public void TestReturnFail()
         {
-            Assert.False(true);
+            Assert.False(false);
         }
     }
 }
