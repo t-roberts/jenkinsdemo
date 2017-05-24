@@ -66,12 +66,14 @@ for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
     set testAssemblies=!testAssemblies! !testAssembly!
   )
 )
+echo discovered-test-projects
 
 :: run the xunit console runner
 echo on
 set testAssemblies="%root%\bin\Debug\Jenkins.Fass.Tests.dll"
 "%xdir%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
 
+echo ran-unit-tests
 
 @echo off
 if /i %failOnError% neq 0 (
