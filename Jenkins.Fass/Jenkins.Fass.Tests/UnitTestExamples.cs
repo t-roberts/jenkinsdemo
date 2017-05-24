@@ -15,11 +15,11 @@ namespace Jenkins.Fass.Tests
         {
             Assert.True(true);
         }
-
+        
         [Fact]
         public void TestReturnFail()
         {
-            Assert.False(false);
+            Assert.False(true);
         }
     }
 }
