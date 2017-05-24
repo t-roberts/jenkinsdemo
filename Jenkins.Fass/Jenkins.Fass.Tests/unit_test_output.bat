@@ -47,7 +47,7 @@ echo copied-runner-console
 
 :: Copy the current xunit exeuction library for .net 4.5 to the bin folder
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.extensibility.execution.*"') do (
-  copy "%%a\lib\net452\*" "%xdir%" >NUL
+  copy "%%a\lib\net452\*" %xdir% >NUL
 )
 
 echo copied-extensibility
