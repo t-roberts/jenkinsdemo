@@ -72,7 +72,7 @@ echo discovered-test-projects
 :: run the xunit console runner
 echo on
 set testAssemblies="%root%\bin\Debug\Jenkins.Fass.Tests.dll"
-"%xdir%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
+"C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\bin\debug\xunit\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
 
 echo ran-unit-tests
 
