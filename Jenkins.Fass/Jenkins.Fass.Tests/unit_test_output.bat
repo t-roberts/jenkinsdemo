@@ -33,19 +33,24 @@ echo xdir: %xdir%
 echo end-configuration
 
 :: clear out old bin path
-::if exist "%xdir%" rmdir "%xdir%" /s /q
-::mkdir "%xdir%"
+if exist %xdir% rmdir %xdir% /s /q
+::mkdir %xdir%
 
+echo created-xdir: %xdir%
 
 :: Copy the current xunit console runner to the bin folder
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.runner.console.*"') do (
  copy "%%a\tools\*" "%xdir%" >NUL
 )
 
+echo copied-runner-console
+
 :: Copy the current xunit exeuction library for .net 4.5 to the bin folder
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.extensibility.execution.*"') do (
   copy "%%a\lib\net452\*" "%xdir%" >NUL
 )
+
+echo copied-extensibility
 
 :: Discover test projects
 set testAssemblies=
