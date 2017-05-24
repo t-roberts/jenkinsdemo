@@ -30,6 +30,8 @@ echo configuration: %configuration%
 echo fail-on-error: %failOnError%
 echo xdir: %xdir%
 
+echo end-configuration
+
 :: clear out old bin path
 ::if exist "%xdir%" rmdir "%xdir%" /s /q
 ::mkdir "%xdir%"
