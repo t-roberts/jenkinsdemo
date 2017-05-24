@@ -34,8 +34,8 @@ echo xdir: %xdir%
 ::if exist "%xdir%" rmdir "%xdir%" /s /q
 ::mkdir "%xdir%"
 
-if exist "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\" rmdir "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\" /s /q
-mkdir "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\"
+if exist "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\bin\debug\xunit" rmdir "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\" /s /q
+mkdir "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\bin\debug\xunit"
 
 
 :: Copy the current xunit console runner to the bin folder
