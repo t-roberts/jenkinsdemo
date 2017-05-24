@@ -11,7 +11,7 @@ echo projectroot: %projectroot%
 
 
 :: put xunit binaries into a folder without versioning in the name
-set xdir=^"%root%\bin\debug\xunit\^"
+set xdir=^"%root%bin\debug\xunit\^"
 
 :: set defaults
 set resultCode=0
