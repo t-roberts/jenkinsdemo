@@ -31,8 +31,8 @@ echo fail-on-error: %failOnError%
 echo xdir: %xdir%
 
 :: clear out old bin path
-if exist "%xdir%" rmdir "%xdir%" /s /q
-mkdir "%xdir%"
+if exist "%"xdir"%" rmdir "%"xdir"%" /s /q
+mkdir "%"xdir"%"
 
 
 
