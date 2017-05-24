@@ -34,7 +34,7 @@ echo end-configuration
 
 :: clear out old bin path
 if exist %xdir% rmdir %xdir% /s /q
-::mkdir %xdir%
+mkdir %xdir%
 
 echo created-xdir: %xdir%
 
