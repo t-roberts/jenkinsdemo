@@ -31,9 +31,11 @@ echo fail-on-error: %failOnError%
 echo xdir: %xdir%
 
 :: clear out old bin path
-if exist "%"xdir"%" rmdir "%"xdir"%" /s /q
-mkdir "%"xdir"%"
+::if exist "%xdir%" rmdir "%xdir%" /s /q
+::mkdir "%xdir%"
 
+if exist "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\" rmdir "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\" /s /q
+mkdir "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\\bin\debug\xunit\"
 
 
 :: Copy the current xunit console runner to the bin folder
@@ -64,7 +66,7 @@ for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
 :: run the xunit console runner
 echo on
 set testAssemblies="%root%\bin\Debug\Jenkins.Fass.Tests.dll"
-"%xdir%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
+"%bin%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
 
 
 @echo off
