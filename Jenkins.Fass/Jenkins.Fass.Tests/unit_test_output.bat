@@ -58,7 +58,7 @@ set testAssemblies=
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
   :: copy the execution library into each test library output folder
 
-  copy "%xdir%xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
+  copy "%xdir%\xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
 
   :: add this assembly to the list of assemblies (delayed expansion)
   set testAssembly=^"%%a\bin\%configuration%\%%~nxa.dll^"
