@@ -60,6 +60,8 @@ for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
 
   copy "C:\Program Files (x86)\Jenkins\workspace\Fass-Freestyle\Jenkins.Fass\Jenkins.Fass.Tests\bin\debug\xunit\xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
 
+  echo copied-xunit
+
   :: add this assembly to the list of assemblies (delayed expansion)
   set testAssembly=^"%%a\bin\%configuration%\%%~nxa.dll^"
 
