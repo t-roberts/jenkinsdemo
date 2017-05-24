@@ -11,7 +11,7 @@ echo projectroot: %projectroot%
 
 
 :: put xunit binaries into a folder without versioning in the name
-set bin=^"%root%\bin\debug\xunit\^"
+set xdir=^"%root%\bin\debug\xunit\^"
 
 :: set defaults
 set resultCode=0
@@ -28,29 +28,29 @@ if not [%3]==[] if not [%3]==[-] set failOnError=%3
 echo output-path:   %outputPath%
 echo configuration: %configuration%
 echo fail-on-error: %failOnError%
-echo bin: %bin%
+echo xdir: %xdir%
 
 :: clear out old bin path
-if exist "%bin%" rmdir "%bin%" /s /q
-mkdir "%bin%"
+if exist "%xdir%" rmdir "%xdir%" /s /q
+mkdir "%xdir%"
 
 
 
 :: Copy the current xunit console runner to the bin folder
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.runner.console.*"') do (
- copy "%%a\tools\*" "%bin%" >NUL
+ copy "%%a\tools\*" "%xdir%" >NUL
 )
 
 :: Copy the current xunit exeuction library for .net 4.5 to the bin folder
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.extensibility.execution.*"') do (
-  copy "%%a\lib\net452\*" "%bin%" >NUL
+  copy "%%a\lib\net452\*" "%xdir%" >NUL
 )
 
 :: Discover test projects
 set testAssemblies=
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
   :: copy the execution library into each test library output folder
-  copy "%bin%\xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
+  copy "%xdir%\xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
 
   :: add this assembly to the list of assemblies (delayed expansion)
   set testAssembly=^"%%a\bin\%configuration%\%%~nxa.dll^"
@@ -64,7 +64,7 @@ for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
 :: run the xunit console runner
 echo on
 set testAssemblies="%root%\bin\Debug\Jenkins.Fass.Tests.dll"
-"%bin%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
+"%xdir%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
 
 
 @echo off
