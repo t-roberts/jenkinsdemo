@@ -58,7 +58,7 @@ set testAssemblies=
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
   :: copy the execution library into each test library output folder
 
-  echo copying dlls
+  echo copying-dlls
 
   copy "%xdir%xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
 
