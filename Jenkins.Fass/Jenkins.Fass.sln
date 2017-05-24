@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jenkins.Fass.Web", "Jenkins
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jenkins.Fass.Tests", "Jenkins.Fass.Tests\Jenkins.Fass.Tests.csproj", "{80C1EC7A-151B-433C-A40A-14D3B7D8EB8C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{A93B8182-CF86-4CB5-83CC-5FFFF3CD6C4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
