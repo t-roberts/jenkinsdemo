@@ -51,12 +51,12 @@ for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.extensib
 )
 
 echo copied-extensibility
+echo xdir: %xdir%
 
 :: Discover test projects
 set testAssemblies=
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
   :: copy the execution library into each test library output folder
-  echo copying dlls
   copy "%xdir%\xunit.execution.desktop.dll" "%%a\bin\%configuration%\" >NUL
 
   :: add this assembly to the list of assemblies (delayed expansion)
