@@ -70,7 +70,7 @@ for /f "tokens=*" %%a in ('dir /b /s /a:d "%root%\*.Tests"') do (
 :: run the xunit console runner
 echo on
 set testAssemblies="%root%\bin\Debug\Jenkins.Fass.Tests.dll"
-"%bin%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
+"%xdir%\xunit.console.exe" %testAssemblies% -xml %outputPath% -parallel all -class "Jenkins.Fass.Tests.UnitTestExamples"
 
 
 @echo off
