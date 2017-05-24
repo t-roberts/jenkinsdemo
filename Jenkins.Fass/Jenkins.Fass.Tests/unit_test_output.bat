@@ -40,7 +40,7 @@ echo created-xdir: %xdir%
 
 :: Copy the current xunit console runner to the bin folder
 for /f "tokens=*" %%a in ('dir /b /s /a:d "%projectroot%\packages\xunit.runner.console.*"') do (
- copy "%%a\tools\*" "%xdir%" >NUL
+ copy "%%a\tools\*" %xdir% >NUL
 )
 
 echo copied-runner-console
